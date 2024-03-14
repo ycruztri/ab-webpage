@@ -1,0 +1,27 @@
+body {
+    background-color: #7c8ca5; 
+    display: flex; 
+    align-items: center;
+    flex-direction: column;
+}
+
+#part1{
+    display: flex; 
+    align-items: center;
+    flex-direction: column;
+}
+
+#part1 h2{
+    font-family:'Courier New', Courier, monospace; 
+    color: aquamarine;
+}
+
+#part2{
+    display: flex; 
+    align-items: center;
+    flex-direction: column;
+}
+
+.verA{
+    width:30vw; 
+}
