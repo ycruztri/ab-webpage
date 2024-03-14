@@ -1,0 +1,130 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <meta name="viewport" conent="width=device-width, initial-scale=1.0" />
+        <title>A/B Testing Handin</title>
+        <!-- Importing CSS Styles -->
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+
+    <body>
+        <h1><mark>Part 1: Data Collection</mark></h1>
+        <div id="p1">
+            <h2>Overview:</h2>
+            <p>In this assignment, we  focused on conducting A/B tests to 
+                compare the effectiveness of two UI designs (showcased below). 
+                The goal of this assignment was to determine which design led to 
+                better user interaction. As we learned,  A/B testing allows us to 
+                compare variations of a design and collect quantitative data on 
+                user behavior. By analyzing metrics like misclick rate, time on 
+                page, and time to first click, we can make data-driven decisions on 
+                design optimization, overall improving user experience.
+            </p>
+
+            <h2>Screenshot of Version A:</h2>
+            <img class="verA" src="./images/a.png" alt="Version A of the user interface"/>
+            
+            <h2>Screenshot of Version B:</h2>
+            <img class="verB" src="./images/b.png" alt="Version B of the user interface"/>
+        </div>
+
+        <h1><mark>Part 2: Analysis</mark></h1>
+        <div id="p2">
+            <h2>Creating Hypotheses:</h2>
+            <h3>Misclick Rate:</h3>
+            <ul>
+                <li><b>Null Hypothesis:</b> A and B will have the same misclick rate. </li>
+                <li><b>Alternative Hypothesis:</b> A will have a higher misclick rate than B.</li>
+                <li><b>Null Hypothesis Prediction:</b> I predict that we will reject the null hypothesis because the changes made in B were made with the intention of lowering the misclick rate. </li>
+                <li><b>Alternative Hypothesis Reasoning:</b> I think that A will have a higher misclick rate than B because the changes made in B make it easier to distinguish the different types of information. This means that there will be fewer misclicks on B.</li>
+            </ul>
+
+            <h3>Time on Page:</h3>
+            <ul>
+                <li><b>Null Hypothesis:</b> A and B will have the same time on page average. </li>
+                <li><b>Alternative Hypothesis:</b> A will have a higher time on page average than B.</li>
+                <li><b>Null Hypothesis Prediction:</b> I predict that we will reject the null hypothesis because the changes made in B were made with the intention of making it easier to distinguish information, thus making the average time on page lower.</li>
+                <li><b>Alternative Hypothesis Reasoning:</b> I think that A will have a higher time on page average than B because in A, it is hard to notice a distinction between all of the data.</li>
+            </ul>
+
+            <h3>Time to First Click:</h3>
+            <p>The metric that I chose is the time to time to first click, specifically the average. I chose this because it can tell you a lot about how fast a user can find the displayed information. </p>
+            <ul>
+                <li><b>Null Hypothesis:</b> A and B will have the same time to first click average.</li>
+                <li><b>Alternative Hypothesis:</b> A will have a higher time to first click average than B.</li>
+                <li><b>Null Hypothesis Prediction:</b> I predict that we will reject the null hypothesis because the changes in B were made so that it is easy to identify the information, making the time to first click lower in B.</li>
+                <li><b>Alternative Hypothesis Reasoning:</b> I think that A will have a higher time to first click average than B because it will take them longer to identify which button to click, since it is hard to distinguish which button makes the appointment in A.</li>
+            </ul>
+
+            <h2>Run Statistical Tests on the Data: </h2>
+            <p>What each piece of data tells us: </p>
+            <ul>
+                <li><b>Significance level:</b> It tells us the threshold below which we consider a result to be statistically significant. In other words, it is the probability of rejecting the null hypothesis when it is actually true.</li>
+                <li><b>ꭓ²/T-score:</b> It tells us the magnitude of the difference between the two groups.</li>
+                <li><b>P-value:</b> It tells us how likely it is to obtain the observed data if the null hypothesis is correct.</li>
+            </ul>
+
+            <h3>Misclick Rate:</h3>
+            <ul>
+                <li>I am doing a <b>ꭓ²</b> test to the misclick rate because we want to compare the frequency of version A with the frequency of version B, in other words, it is categorical. </li>
+                <li><img class="mRS" src="./images/misclick_rate_stats.png" alt="image of the misclick rate stats"/></li>
+                <li>Statistical Significance: The difference between versions A and B is not statistically significant.</li>
+                <li>Important Values: 
+                    <ul>
+                        <li><b>Significance level:</b> 0.05</li>
+                        <li><b>ꭓ²:</b> 1.828</li>
+                        <li><b>P-value:</b> 0.1763</li>
+                    </ul>
+                </li>
+                <li> Conclusion:
+                    <ul>
+                        <li>The p-value is greater than the significance level, so this tells us that we do not have enough evidence to reject the null hypothesis. Thus, <b>we fail to reject the null hypothesis.</b> </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Time on Page:</h3>
+            <ul>
+                <li>I am doing a <b>two-tailed t-test</b> for time on page because time on page is continuous, also because we are interested in whether one version is significantly greater than the other.</li>
+                <li><img class="tPS" src="./images/time_on_page_stats.png" alt="image of the time on page stats"/></li>
+                <li>Statistical Significance: The difference between versions A and B in terms of the time spent on the page is statistically significant.</li>
+                <li>Important Values: 
+                    <ul>
+                        <li><b>Significance level:</b> 0.05</li>
+                        <li><b>Average of A:</b> 22,324.783 ms</li>
+                        <li><b>Average of B:</b> 8,456.25 ms</li>
+                        <li><b>P-value:</b> 0.000286</li>
+                    </ul>
+                </li>
+                <li> Conclusion:
+                    <ul>
+                        <li>Since the p-value is less than the significance level, there is strong evidence that suggests that  users spend significantly less time on page B compared to page A. This is also seen in the averages of both versions: the average of A is significantly larger than that of B. Thus, we <b>reject the null hypothesis.</b> </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Time to First Click:</h3>
+            <ul>
+                <li>I am doing a <b>two-tailed t-test</b>  for time on page because time on page is continuous, also because we are interested in whether one version is significantly greater than the other. </li>
+                <li><img class="tFCS" src="./images/time_to_first_click_stats.png" alt="image of the time to first click stats"/></li>
+                <li>Statistical Significance: The difference between versions A and B when it comes to time until the first click is statistically significant.</li>
+                <li>Important Values: 
+                    <ul>
+                        <li><b>Significance level:</b> 0.05</li>
+                        <li><b>Average of A:</b> 12,217.429 ms</li>
+                        <li><b>Average of B:</b> 4,723.4 ms</li>
+                        <li><b>P-value:</b> 0.0000834</li>
+                    </ul>
+                </li>
+                <li> Conclusion:
+                    <ul>
+                        <li>Since the p-value is really close to zero while being less than the significance level, this means that there is strong evidence suggesting users spend significantly less time on B than A. We can also see this in the averages of both versions: the average of A is significantly larger than that of B. Thus, <b>reject the null hypothesis.</b> </li>
+                    </ul>
+                </li>
+            </ul>
+
+            <h3>Summary Statistics: </h3>
+            <p>When evaluating the A/B test results, we saw that Version A exhibits a higher average misclick rate at 26.087%, whereas Version B shows a lower rate of 10%. Regarding the users total time on the page, Version A has a longer average (22,324.783 ms) and median (20,237 ms), compared to Version B's average (8,456.25 ms) and median (7,718 ms). We also saw that Version A's time to first click is longer on average (12,217.429 ms) and median (9,523 ms) than Version B's (4,723.4 ms and 4,284.5 ms). These statistics suggest potential usability and engagement differences between the versions, providing insights crucial for further optimization and decision-making in the A/B testing process.</p>
+        </div>
+    </body>
+</html>
